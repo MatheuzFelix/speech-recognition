@@ -72,6 +72,7 @@ def window():
     ]
     window = sg.Window('Recognizer', layout, finalize=True)
     #window['id'].bind('<Return>', '_Enter')
+    
     while True:
         event, value = window.read()
         if event == 'enviar' or event == '_Enter':

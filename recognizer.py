@@ -1,3 +1,4 @@
+from cgitb import text
 from tkinter.filedialog import askopenfilename
 import speech_recognition as sr
 import PySimpleGUI as sg
@@ -5,7 +6,6 @@ import docx2txt
 import pyttsx3
 import PyPDF2
 import os
-
 
 def listen_mic():
     mic = sr.Recognizer()
@@ -21,7 +21,7 @@ def listen_mic():
     except sr.UnknownValueError:
         print('Fala não reconhecida. Tente novamente')
 
-    return text
+    write_txt(text)
 
 def write_txt(text):
     with open('text.txt', 'w', encoding='utf-8') as f:
@@ -60,3 +60,4 @@ def read_file():
 
     else:
         print('selecione um arquivo "txt", "pdf" ou  "docx"')
+

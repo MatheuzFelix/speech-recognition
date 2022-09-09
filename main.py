@@ -1,7 +1,6 @@
 import PySimpleGUI as sg
 
-from recognizer import listen_mic, write_txt, text_speech, read_file
-
+from recognizer import listen_mic, read_file
 
 sg.theme('Reddit')
 layout = [
@@ -20,7 +19,6 @@ while True:
         print(event)
         if value['audio'] == True:
             listen_mic()
-            write_txt()
         elif value['text'] == True:
             read_file()
     break
